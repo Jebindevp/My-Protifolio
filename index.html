@@ -40,6 +40,10 @@
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
 
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -65,7 +69,7 @@
 
 		.profile-thumb:hover {
 			transform: scale(1.05);
-			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+			box-shadow: 0 10px 20px rgba(47, 69, 212, 0.3);
 		}
 
 		/* Social icon hover effect */
@@ -441,58 +445,38 @@
 
 		#fh5co-skills {
 			padding: 60px 0;
-			background-color: #0f55be57;
+			background-color: rgba(15, 85, 190, 0.34);
+			/* same as #0f55be57 */
 		}
 
-		.fh5co-heading h2 {
-			font-size: 36px;
-			font-weight: bold;
-			margin-bottom: 30px;
-			color: #333;
-		}
-
-		.chart {
-			width: 150px;
-			height: 150px;
-			margin: 20px auto;
-			position: relative;
+		.skill-icon {
+			margin: 30px 0;
 			text-align: center;
-			border-radius: 50%;
-			margin: 30px;
-		}
-
-		.chart:hover {
-			transform: scale(1.1);
-			box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-		}
-
-		.chart span {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			font-weight: bold;
 			color: #fff;
-			font-size: 16px;
-			line-height: 1.4;
-			text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+			transition: transform 0.3s ease, color 0.3s ease;
 		}
 
-		.chart strong {
+		.skill-icon i {
+			font-size: 50px;
+			margin-bottom: 10px;
 			display: block;
-			font-size: 18px;
-			color: #222;
+			transition: transform 0.3s ease, color 0.3s ease;
 		}
 
-		@media (max-width: 768px) {
-			.chart {
-				width: 120px;
-				height: 120px;
-			}
+		.skill-icon p {
+			margin-top: 10px;
+			font-size: 18px;
+			font-weight: bold;
+		}
 
-			.chart span {
-				font-size: 14px;
-			}
+		.skill-icon:hover {
+			transform: translateY(-10px);
+			color: #f5863c;
+		}
+
+		.skill-icon:hover i {
+			color: #e1703b;
+			transform: scale(1.2);
 		}
 
 
@@ -694,10 +678,11 @@
 	<div class="fh5co-loader"></div>
 
 	<div id="page">
+		<!-- Heading -->
 		<header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner">
 
 			<div class="overlay"></div>
-			<div class="container">
+			<div class="container" style="background-color: #0f55be57;width:100%;">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
 						<div class="display-t js-fullheight">
@@ -711,13 +696,15 @@
 								<h2 style="color:white"><span>Web Developer</span></h2>
 
 								<!-- Social Icons -->
-								<ul class="fh5co-social-icons" style="justify-content: center;">
-									<li><a href="#"><i class="icon-facebook2"></i></a></li>
+								<ul class="fh5co-social-icons"
+									style="display: flex; justify-content: center; gap: 10px;">
 									<li><a href="https://www.linkedin.com/in/jebin-joseph-6ba428376/"><i
 												class="icon-linkedin2"></i></a></li>
 									<li><a href="https://github.com/Jebindevp" target="_blank"><i
 												class="icon-github"></i></a></li>
 									<li><a href="mailto:your@email.com"><i class="icon-mail"></i></a></li>
+									<li><a href="your_resume.pdf" download title="Download Resume"><i
+												class="icon-file-text2"></i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -726,7 +713,7 @@
 			</div>
 		</header>
 
-
+		<!-- About -->
 		<div id="fh5co-about" class="animate-box">
 			<div class="container">
 				<div class="row">
@@ -781,7 +768,7 @@
 				</div>
 			</div>
 		</div>
-
+		<!-- My Resume -->
 		<div id="fh5co-resume" class="fh5co-bg-color">
 			<div class="container">
 				<div class="row animate-box">
@@ -910,7 +897,7 @@
 			</div>
 		</div>
 
-
+		<!-- Service -->
 		<div id="fh5co-features" class="animate-box">
 			<div class="container">
 				<div class="services-padding">
@@ -1000,46 +987,69 @@
 				</div>
 			</div>
 		</div>
-
-		<div id="fh5co-skills" class="animate-box">
+		<!-- Skilles -->
+		<div id="fh5co-skills" class="animate-box" style="background-color: #0f55be57; padding: 50px 0;">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 						<h2 style="color: white;">Skills</h2>
 					</div>
 				</div>
-				<div class="row row-pb-md">
-					<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-						<div class="chart" data-percent="100"><span><strong>HTML5</strong>100%</span></div>
+				<div class="row text-center">
+					<div class="col-md-3 col-sm-6 col-xs-12 skill-icon">
+						<i class="fab fa-html5"></i>
+						<p>HTML5</p>
 					</div>
-					<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-						<div class="chart" data-percent="93"><span><strong>CSS3</strong>93%</span></div>
+					<div class="col-md-3 col-sm-6 col-xs-12 skill-icon">
+						<i class="fab fa-css3-alt"></i>
+						<p>CSS</p>
 					</div>
-					<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-						<div class="chart" data-percent="75"><span><strong>Java Script</strong>75%</span></div>
+					<div class="col-md-3 col-sm-6 col-xs-12 skill-icon">
+						<i class="fab fa-js"></i>
+						<p>JavaScript</p>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12 skill-icon">
+						<i class="fab fa-bootstrap"></i>
+						<p>Bootstrap</p>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12 skill-icon">
+						<i class="fab fa-python"></i>
+						<p>Python</p>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12 skill-icon">
+						<i class="fas fa-feather-alt"></i>
+						<p>Django</p>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12 skill-icon">
+						<i class="fas fa-database"></i>
+						<p>MySQL</p>
 					</div>
 
-					<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-						<div class="chart" data-percent="80"><span><strong>Python</strong>80%</span></div>
+					<div class="col-md-3 col-sm-6 col-xs-12 skill-icon">
+						<i class="fas fa-plug"></i>
+						<p>API</p>
 					</div>
-					<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-						<div class="chart" data-percent="85"><span><strong>MySQL</strong>85%</span></div>
+					<div class="col-md-3 col-sm-6 col-xs-12 skill-icon">
+						<i class="fab fa-js"></i>
+						<p>jQuery</p>
 					</div>
-					<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-						<div class="chart" data-percent="90"><span><strong>Django</strong>90%</span></div>
+
+					<!-- React -->
+					<div class="col-md-3 col-sm-6 col-xs-12 skill-icon">
+						<i class="fab fa-react"></i>
+						<p>React</p>
 					</div>
-					<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-						<div class="chart" data-percent="70"><span><strong>API</strong>70%</span></div>
-					</div>
-					<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-						<div class="chart" data-percent="50"><span><strong>Ajax</strong>50%</span></div>
+					<!-- REST API -->
+					<div class="col-md-3 col-sm-6 col-xs-12 skill-icon">
+						<i class="fas fa-code-branch"></i>
+						<p>REST API</p>
 					</div>
 				</div>
-
 			</div>
 		</div>
 
-		<div id="fh5co-work" class="fh5co-bg-dark">
+		<!-- work -->
+		<div id="fh5co-work" class="fh5co-bg-dark" style="background-color: #0f55be57">
 			<div class="container">
 				<div class="row animate-box">
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
@@ -1142,7 +1152,7 @@
 				</div>
 			</div>
 		</div>
-
+		<!-- Post My Project -->
 		<div id="fh5co-blog">
 			<div class="container">
 				<div class="row animate-box">
@@ -1165,7 +1175,8 @@
 								<ul class="stuff">
 									<li><i class="icon-heart2"></i>150</li>
 									<li><i class="icon-eye2"></i>308</li>
-									<li><a href="http://clovion.org/elearningweb/" target="_blank">Read More<i class="icon-arrow-right22"></i></a></li>
+									<li><a href="http://clovion.org/elearningweb/" target="_blank">Read More<i
+												class="icon-arrow-right22"></i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -1181,7 +1192,8 @@
 								<ul class="stuff">
 									<li><i class="icon-heart2"></i>290</li>
 									<li><i class="icon-eye2"></i>300</li>
-									<li><a href="https://saivaprakashasabha.in/" target="_blank">Read More<i class="icon-arrow-right22"></i></a></li>
+									<li><a href="https://saivaprakashasabha.in/" target="_blank">Read More<i
+												class="icon-arrow-right22"></i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -1191,13 +1203,14 @@
 							<a href="#" class="blog-bg" style="background-image: url(images/aa12.jpg);"></a>
 							<div class="blog-text">
 								<span class="posted_on">Jun.2025</span>
-								<h3><a href="#">Wedding Events Static  Website Project</a></h3>
+								<h3><a href="#">Wedding Events Static Website Project</a></h3>
 								<p><a href="https://jebindevp.github.io/wedding/" target="_blank">Visit E-learning
 										Website</a></p>
 								<ul class="stuff">
 									<li><i class="icon-heart2"></i>100</li>
 									<li><i class="icon-eye2"></i>130</li>
-									<li><a href="https://jebindevp.github.io/wedding/" target="_blank">Read More<i class="icon-arrow-right22"></i></a></li>
+									<li><a href="https://jebindevp.github.io/wedding/" target="_blank">Read More<i
+												class="icon-arrow-right22"></i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -1206,7 +1219,7 @@
 			</div>
 		</div>
 
-
+		<!-- Contact -->
 		<div id="fh5co-consult">
 			<div class="video fh5co-video" style="background-image: url('images/insta1.jpg');">
 				<div class="overlay"></div>
@@ -1250,11 +1263,11 @@
 
 	</div>
 
-	<div id="fh5co-footer">
+	<div id="fh5co-footer" style="background-color: #0f55be57">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<p>&copy; 2025 All Rights Reserved. <br>Designed by Jebindevp
+					<p> 2025. <br>Designed by Jebindevp
 						<a href="https://github.com/Jebindevp" target="_blank">Github</a>
 						<a href="https://github.com/Jebindevp" target="_blank">Click Here </a>
 					</p>
