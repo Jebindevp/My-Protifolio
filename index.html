@@ -193,6 +193,47 @@
 			}
 		}
 
+		.fh5co-social-icons {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 15px;
+			padding: 10px 0;
+			list-style: none;
+			margin: 0;
+		}
+
+		.fh5co-social-icons li a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 45px;
+			height: 45px;
+			font-size: 20px;
+			color: #fff;
+			background-color: #333;
+			border-radius: 50%;
+			transition: 0.3s;
+			text-decoration: none;
+		}
+
+		.fh5co-social-icons li a:hover {
+			background-color: #007bff;
+			color: white;
+		}
+
+		/* Optional: Improve spacing on smaller screens */
+		@media (max-width: 480px) {
+			.fh5co-social-icons {
+				gap: 10px;
+			}
+
+			.fh5co-social-icons li a {
+				width: 40px;
+				height: 40px;
+				font-size: 18px;
+			}
+		}
 
 		/* Resume Section Background */
 		#fh5co-resume.fh5co-bg-color {
@@ -702,8 +743,8 @@
 												class="icon-linkedin2"></i></a></li>
 									<li><a href="https://github.com/Jebindevp" target="_blank"><i
 												class="icon-github"></i></a></li>
-									<li><a href="mailto:your@email.com"><i class="icon-mail"></i></a></li>
-									<li><a href="your_resume.pdf" download title="Download Resume"><i
+									<li><a href="./images/my1.pdf" class="btn"><i class="icon-mail"></i></a></li>
+									<li><a href="./images/new2.pdf" download title="Download Resume"><i
 												class="icon-file-text2"></i></a></li>
 								</ul>
 							</div>
@@ -755,12 +796,14 @@
 							continuous learning. Adept at working independently or in teams, managing projects from
 							concept to deployment, and delivering intuitive user experiences across devices.</p>
 						<p>
-						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-facebook3"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin2"></i></a></li>
-							<li><a href="https://919487851243" target="_blank"><i class="icon-whatsapp"></i></a></li>
+						<ul class="fh5co-social-icons" style="display: flex; justify-content: center; gap: 10px;">
+							<li><a href="https://www.linkedin.com/in/jebin-joseph-6ba428376/"><i
+										class="icon-linkedin2"></i></a></li>
 							<li><a href="https://github.com/Jebindevp" target="_blank"><i class="icon-github"></i></a>
 							</li>
+							<li><a href="/images/my1.pdf" class="btn"><i class="icon-mail"></i></a></li>
+							<li><a href="/images/new2.pdf" download title="Download Resume"><i
+										class="icon-file-text2"></i></a></li>
 						</ul>
 
 						</p>
@@ -1206,7 +1249,14 @@
 			</div>
 			<div class="choose animate-box">
 				<h2>Contact</h2>
-				<form action="#" method="POST">
+				<form action="https://formsubmit.co/jebin.developer@gmail.com" method="POST">
+
+					<!-- Optional: Redirect after submit -->
+					<!-- <input type="hidden" name="_next" value="http://127.0.0.1:5501/index.html"> -->
+
+					<!-- Optional: Disable CAPTCHA -->
+					<input type="hidden" name="_captcha" value="false">
+
 					<div class="form-row">
 						<div class="form-group col-md-6">
 							<input type="text" id="fname" name="fname" class="form-control"
@@ -1236,12 +1286,16 @@
 					<div class="form-group">
 						<input type="submit" value="Send Message" class="btn btn-primary">
 					</div>
+
 				</form>
+
+
+				<div id="thank-you"
+					style="display:none; color: rgb(228, 117, 13); font-weight: bold; margin-top: 20px;">
+					✅ Thank you for your details!
+				</div>
 			</div>
 		</div>
-
-
-
 
 		<div id="fh5co-footer" style="background-color: #0f55be57">
 			<div class="container">
@@ -1287,7 +1341,27 @@
 					paragraph.style.display = paragraph.style.display === 'none' ? 'block' : 'none';
 				}
 			}
+		</script>
 
+		<script>
+			document.getElementById("contactForm").addEventListener("submit", function (e) {
+				e.preventDefault(); // prevent actual form submission
+
+				// Optional: You can extract form values here
+				const fname = document.getElementById("fname").value;
+				const lname = document.getElementById("lname").value;
+				const email = document.getElementById("email").value;
+				const subject = document.getElementById("subject").value;
+				const message = document.getElementById("message").value;
+
+				// Here you can send data to email using EmailJS or a backend (not included in this part)
+
+				// Show thank-you message
+				document.getElementById("thank-you").style.display = "block";
+
+				// Optional: Reset form
+				document.getElementById("contactForm").reset();
+			});
 		</script>
 	</div>
 
